@@ -1,0 +1,211 @@
+|Alu
+A[0] => A[0].IN10
+A[1] => A[1].IN10
+A[2] => A[2].IN10
+A[3] => A[3].IN10
+B[0] => B[0].IN10
+B[1] => B[1].IN10
+B[2] => B[2].IN10
+B[3] => B[3].IN10
+RSUM[0] <= sumador:adder.port2
+RSUM[1] <= sumador:adder.port2
+RSUM[2] <= sumador:adder.port2
+RSUM[3] <= sumador:adder.port2
+RSUB[0] <= restador:substractor.port2
+RSUB[1] <= restador:substractor.port2
+RSUB[2] <= restador:substractor.port2
+RSUB[3] <= restador:substractor.port2
+RMULT[0] <= multiplicador:multiplier.port2
+RMULT[1] <= multiplicador:multiplier.port2
+RMULT[2] <= multiplicador:multiplier.port2
+RMULT[3] <= multiplicador:multiplier.port2
+RDIV[0] <= division:divisor.port2
+RDIV[1] <= division:divisor.port2
+RDIV[2] <= division:divisor.port2
+RDIV[3] <= division:divisor.port2
+RMOD[0] <= modulo:modulus.port2
+RMOD[1] <= modulo:modulus.port2
+RMOD[2] <= modulo:modulus.port2
+RMOD[3] <= modulo:modulus.port2
+RAND[0] <= and_op:_and.port2
+RAND[1] <= and_op:_and.port2
+RAND[2] <= and_op:_and.port2
+RAND[3] <= and_op:_and.port2
+ROR[0] <= or_op:_or.port2
+ROR[1] <= or_op:_or.port2
+ROR[2] <= or_op:_or.port2
+ROR[3] <= or_op:_or.port2
+RXOR[0] <= xor_op:_xor.port2
+RXOR[1] <= xor_op:_xor.port2
+RXOR[2] <= xor_op:_xor.port2
+RXOR[3] <= xor_op:_xor.port2
+RSHR[0] <= shiftR:_shiftR.port2
+RSHR[1] <= shiftR:_shiftR.port2
+RSHR[2] <= shiftR:_shiftR.port2
+RSHR[3] <= shiftR:_shiftR.port2
+RSHL[0] <= shiftL:_shiftL.port2
+RSHL[1] <= shiftL:_shiftL.port2
+RSHL[2] <= shiftL:_shiftL.port2
+RSHL[3] <= shiftL:_shiftL.port2
+
+
+|Alu|sumador:adder
+A[0] => Add0.IN4
+A[1] => Add0.IN3
+A[2] => Add0.IN2
+A[3] => Add0.IN1
+B[0] => Add0.IN8
+B[1] => Add0.IN7
+B[2] => Add0.IN6
+B[3] => Add0.IN5
+S[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Alu|restador:substractor
+A[0] => Add0.IN4
+A[1] => Add0.IN3
+A[2] => Add0.IN2
+A[3] => Add0.IN1
+B[0] => Add0.IN8
+B[1] => Add0.IN7
+B[2] => Add0.IN6
+B[3] => Add0.IN5
+S[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Alu|multiplicador:multiplier
+A[0] => Mult0.IN3
+A[1] => Mult0.IN2
+A[2] => Mult0.IN1
+A[3] => Mult0.IN0
+B[0] => Mult0.IN7
+B[1] => Mult0.IN6
+B[2] => Mult0.IN5
+B[3] => Mult0.IN4
+S[0] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Alu|division:divisor
+A[0] => Div0.IN3
+A[1] => Div0.IN2
+A[2] => Div0.IN1
+A[3] => Div0.IN0
+B[0] => Div0.IN7
+B[1] => Div0.IN6
+B[2] => Div0.IN5
+B[3] => Div0.IN4
+S[0] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= <GND>
+
+
+|Alu|modulo:modulus
+A[0] => Mod0.IN3
+A[1] => Mod0.IN2
+A[2] => Mod0.IN1
+A[3] => Mod0.IN0
+B[0] => Mod0.IN7
+B[1] => Mod0.IN6
+B[2] => Mod0.IN5
+B[3] => Mod0.IN4
+S[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= <GND>
+
+
+|Alu|and_op:_and
+A[0] => S.IN0
+A[1] => S.IN0
+A[2] => S.IN0
+A[3] => S.IN0
+B[0] => S.IN1
+B[1] => S.IN1
+B[2] => S.IN1
+B[3] => S.IN1
+S[0] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= <GND>
+
+
+|Alu|or_op:_or
+A[0] => S.IN0
+A[1] => S.IN0
+A[2] => S.IN0
+A[3] => S.IN0
+B[0] => S.IN1
+B[1] => S.IN1
+B[2] => S.IN1
+B[3] => S.IN1
+S[0] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= <GND>
+
+
+|Alu|xor_op:_xor
+A[0] => S.IN0
+A[1] => S.IN0
+A[2] => S.IN0
+A[3] => S.IN0
+B[0] => S.IN1
+B[1] => S.IN1
+B[2] => S.IN1
+B[3] => S.IN1
+S[0] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= <GND>
+
+
+|Alu|shiftR:_shiftR
+A[0] => ShiftRight0.IN5
+A[1] => ShiftRight0.IN4
+A[2] => ShiftRight0.IN3
+A[3] => ShiftRight0.IN2
+B[0] => ShiftRight0.IN9
+B[1] => ShiftRight0.IN8
+B[2] => ShiftRight0.IN7
+B[3] => ShiftRight0.IN6
+S[0] <= ShiftRight0.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= ShiftRight0.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= ShiftRight0.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= ShiftRight0.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= ShiftRight0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Alu|shiftL:_shiftL
+A[0] => ShiftLeft0.IN5
+A[1] => ShiftLeft0.IN4
+A[2] => ShiftLeft0.IN3
+A[3] => ShiftLeft0.IN2
+B[0] => ShiftLeft0.IN9
+B[1] => ShiftLeft0.IN8
+B[2] => ShiftLeft0.IN7
+B[3] => ShiftLeft0.IN6
+S[0] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+
+
