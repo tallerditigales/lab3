@@ -4,163 +4,39 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "RSUM[0]",
+					"name" : "S[0]",
 					"strict" : false
 				},
 				{
-					"name" : "RSUM[1]",
+					"name" : "S[1]",
 					"strict" : false
 				},
 				{
-					"name" : "RSUM[2]",
+					"name" : "S[2]",
 					"strict" : false
 				},
 				{
-					"name" : "RSUM[3]",
+					"name" : "S[3]",
 					"strict" : false
 				},
 				{
-					"name" : "RSUB[0]",
+					"name" : "ss[4]",
 					"strict" : false
 				},
 				{
-					"name" : "RSUB[1]",
+					"name" : "ss[0]",
 					"strict" : false
 				},
 				{
-					"name" : "RSUB[2]",
+					"name" : "ss[3]",
 					"strict" : false
 				},
 				{
-					"name" : "RSUB[3]",
+					"name" : "ss[1]",
 					"strict" : false
 				},
 				{
-					"name" : "RMULT[0]",
-					"strict" : false
-				},
-				{
-					"name" : "RMULT[1]",
-					"strict" : false
-				},
-				{
-					"name" : "RMULT[2]",
-					"strict" : false
-				},
-				{
-					"name" : "RMULT[3]",
-					"strict" : false
-				},
-				{
-					"name" : "RDIV[0]",
-					"strict" : false
-				},
-				{
-					"name" : "RDIV[1]",
-					"strict" : false
-				},
-				{
-					"name" : "RDIV[2]",
-					"strict" : false
-				},
-				{
-					"name" : "RDIV[3]",
-					"strict" : false
-				},
-				{
-					"name" : "RMOD[0]",
-					"strict" : false
-				},
-				{
-					"name" : "RMOD[1]",
-					"strict" : false
-				},
-				{
-					"name" : "RMOD[2]",
-					"strict" : false
-				},
-				{
-					"name" : "RMOD[3]",
-					"strict" : false
-				},
-				{
-					"name" : "RAND[0]",
-					"strict" : false
-				},
-				{
-					"name" : "RAND[1]",
-					"strict" : false
-				},
-				{
-					"name" : "RAND[2]",
-					"strict" : false
-				},
-				{
-					"name" : "RAND[3]",
-					"strict" : false
-				},
-				{
-					"name" : "ROR[0]",
-					"strict" : false
-				},
-				{
-					"name" : "ROR[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ROR[2]",
-					"strict" : false
-				},
-				{
-					"name" : "ROR[3]",
-					"strict" : false
-				},
-				{
-					"name" : "RXOR[0]",
-					"strict" : false
-				},
-				{
-					"name" : "RXOR[1]",
-					"strict" : false
-				},
-				{
-					"name" : "RXOR[2]",
-					"strict" : false
-				},
-				{
-					"name" : "RXOR[3]",
-					"strict" : false
-				},
-				{
-					"name" : "RSHR[0]",
-					"strict" : false
-				},
-				{
-					"name" : "RSHR[1]",
-					"strict" : false
-				},
-				{
-					"name" : "RSHR[2]",
-					"strict" : false
-				},
-				{
-					"name" : "RSHR[3]",
-					"strict" : false
-				},
-				{
-					"name" : "RSHL[0]",
-					"strict" : false
-				},
-				{
-					"name" : "RSHL[1]",
-					"strict" : false
-				},
-				{
-					"name" : "RSHL[2]",
-					"strict" : false
-				},
-				{
-					"name" : "RSHL[3]",
+					"name" : "ss[2]",
 					"strict" : false
 				},
 				{
@@ -173,6 +49,10 @@
 				},
 				{
 					"name" : "B[1]",
+					"strict" : false
+				},
+				{
+					"name" : "B[0]",
 					"strict" : false
 				},
 				{
@@ -189,10 +69,6 @@
 				},
 				{
 					"name" : "A[3]",
-					"strict" : false
-				},
-				{
-					"name" : "B[0]",
 					"strict" : false
 				}
 			]

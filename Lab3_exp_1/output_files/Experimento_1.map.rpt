@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Experimento_1
-Thu Mar 17 10:55:02 2022
+Thu Mar 17 16:01:13 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -16,32 +16,28 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
   8. Analysis & Synthesis DSP Block Usage Summary
   9. General Register Statistics
  10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: Top-level Entity: |Alu
- 12. Parameter Settings for User Entity Instance: sumador:adder
- 13. Parameter Settings for User Entity Instance: restador:substractor
- 14. Parameter Settings for User Entity Instance: multiplicador:multiplier
- 15. Parameter Settings for User Entity Instance: division:divisor
- 16. Parameter Settings for User Entity Instance: modulo:modulus
- 17. Parameter Settings for User Entity Instance: and_op:_and
- 18. Parameter Settings for User Entity Instance: or_op:_or
- 19. Parameter Settings for User Entity Instance: xor_op:_xor
- 20. Parameter Settings for User Entity Instance: shiftR:_shiftR
- 21. Parameter Settings for User Entity Instance: shiftL:_shiftL
- 22. Parameter Settings for Inferred Entity Instance: division:divisor|lpm_divide:Div0
- 23. Parameter Settings for Inferred Entity Instance: modulo:modulus|lpm_divide:Mod0
- 24. Port Connectivity Checks: "shiftL:_shiftL"
- 25. Port Connectivity Checks: "shiftR:_shiftR"
- 26. Port Connectivity Checks: "xor_op:_xor"
- 27. Port Connectivity Checks: "or_op:_or"
- 28. Port Connectivity Checks: "and_op:_and"
- 29. Port Connectivity Checks: "modulo:modulus"
- 30. Port Connectivity Checks: "division:divisor"
- 31. Port Connectivity Checks: "multiplicador:multiplier"
- 32. Port Connectivity Checks: "restador:substractor"
- 33. Port Connectivity Checks: "sumador:adder"
- 34. Post-Synthesis Netlist Statistics for Top Partition
- 35. Elapsed Time Per Partition
- 36. Analysis & Synthesis Messages
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |calc
+ 12. Parameter Settings for User Entity Instance: Alu:alu
+ 13. Parameter Settings for User Entity Instance: Alu:alu|sumador:_sum
+ 14. Parameter Settings for User Entity Instance: Alu:alu|restador:_rest
+ 15. Parameter Settings for User Entity Instance: Alu:alu|multiplicador:_mult
+ 16. Parameter Settings for User Entity Instance: Alu:alu|division:_div
+ 17. Parameter Settings for User Entity Instance: Alu:alu|modulo:_mod
+ 18. Parameter Settings for User Entity Instance: Alu:alu|and_op:_and
+ 19. Parameter Settings for User Entity Instance: Alu:alu|or_op:_or
+ 20. Parameter Settings for User Entity Instance: Alu:alu|xor_op:_xor
+ 21. Parameter Settings for User Entity Instance: Alu:alu|shiftR:_shr
+ 22. Parameter Settings for User Entity Instance: Alu:alu|shiftL:_shl
+ 23. Parameter Settings for User Entity Instance: multiplexor_result:mux_result
+ 24. Parameter Settings for User Entity Instance: multiplexor_flags:mux_flags
+ 25. Parameter Settings for Inferred Entity Instance: Alu:alu|division:_div|lpm_divide:Div0
+ 26. Port Connectivity Checks: "multiplexor_flags:mux_flags"
+ 27. Port Connectivity Checks: "multiplexor_result:mux_result"
+ 28. Port Connectivity Checks: "Alu:alu"
+ 29. Post-Synthesis Netlist Statistics for Top Partition
+ 30. Elapsed Time Per Partition
+ 31. Analysis & Synthesis Messages
+ 32. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -68,14 +64,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Mar 17 10:55:02 2022       ;
+; Analysis & Synthesis Status     ; Successful - Thu Mar 17 16:01:13 2022       ;
 ; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                   ; Experimento_1                               ;
-; Top-level Entity Name           ; Alu                                         ;
+; Top-level Entity Name           ; calc                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 0                                           ;
-; Total pins                      ; 48                                          ;
+; Total pins                      ; 21                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 1                                           ;
@@ -94,7 +90,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; Alu                ; Experimento_1      ;
+; Top-level entity name                                                           ; calc               ; Experimento_1      ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -191,31 +187,33 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                  ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                              ; Library ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
-; multiplicador.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/multiplicador.sv           ;         ;
-; division.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/division.sv                ;         ;
-; modulo.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/modulo.sv                  ;         ;
-; restador.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/restador.sv                ;         ;
-; sumador.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/sumador.sv                 ;         ;
-; and_op.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/and_op.sv                  ;         ;
-; or_op.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/or_op.sv                   ;         ;
-; xor_op.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/xor_op.sv                  ;         ;
-; shiftR.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/shiftR.sv                  ;         ;
-; shiftL.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/shiftL.sv                  ;         ;
-; Alu.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/Alu.sv                     ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_divide.tdf                     ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/abs_divider.inc                    ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/sign_div_unsign.inc                ;         ;
-; aglobal211.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/aglobal211.inc                     ;         ;
-; db/lpm_divide_1am.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/db/lpm_divide_1am.tdf      ;         ;
-; db/sign_div_unsign_7kh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/db/sign_div_unsign_7kh.tdf ;         ;
-; db/alt_u_div_kse.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/db/alt_u_div_kse.tdf       ;         ;
-; db/lpm_divide_42m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/db/lpm_divide_42m.tdf      ;         ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                  ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                              ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; multiplicador.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplicador.sv           ;         ;
+; division.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/division.sv                ;         ;
+; modulo.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/modulo.sv                  ;         ;
+; restador.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/restador.sv                ;         ;
+; sumador.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/sumador.sv                 ;         ;
+; and_op.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/and_op.sv                  ;         ;
+; or_op.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/or_op.sv                   ;         ;
+; xor_op.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/xor_op.sv                  ;         ;
+; shiftR.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/shiftR.sv                  ;         ;
+; shiftL.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/shiftL.sv                  ;         ;
+; Alu.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/Alu.sv                     ;         ;
+; multiplexor_flags.sv             ; yes             ; User SystemVerilog HDL File  ; C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_flags.sv       ;         ;
+; calc.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/calc.sv                    ;         ;
+; multiplexor_result.sv            ; yes             ; User SystemVerilog HDL File  ; C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_result.sv      ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_divide.tdf                                                                     ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/abs_divider.inc                                                                    ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                                                ;         ;
+; aglobal211.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/aglobal211.inc                                                                     ;         ;
+; db/lpm_divide_1am.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/db/lpm_divide_1am.tdf      ;         ;
+; db/sign_div_unsign_7kh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/db/sign_div_unsign_7kh.tdf ;         ;
+; db/alt_u_div_kse.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/db/alt_u_div_kse.tdf       ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------+
@@ -223,52 +221,44 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------+
 ; Resource                                    ; Usage      ;
 +---------------------------------------------+------------+
-; Estimate of Logic utilization (ALMs needed) ; 39         ;
+; Estimate of Logic utilization (ALMs needed) ; 17         ;
 ;                                             ;            ;
-; Combinational ALUT usage for logic          ; 75         ;
+; Combinational ALUT usage for logic          ; 32         ;
 ;     -- 7 input functions                    ; 0          ;
-;     -- 6 input functions                    ; 3          ;
-;     -- 5 input functions                    ; 11         ;
-;     -- 4 input functions                    ; 12         ;
-;     -- <=3 input functions                  ; 49         ;
+;     -- 6 input functions                    ; 2          ;
+;     -- 5 input functions                    ; 9          ;
+;     -- 4 input functions                    ; 6          ;
+;     -- <=3 input functions                  ; 15         ;
 ;                                             ;            ;
 ; Dedicated logic registers                   ; 0          ;
 ;                                             ;            ;
-; I/O pins                                    ; 48         ;
+; I/O pins                                    ; 21         ;
 ;                                             ;            ;
 ; Total DSP Blocks                            ; 1          ;
 ;                                             ;            ;
 ; Maximum fan-out node                        ; B[3]~input ;
-; Maximum fan-out                             ; 22         ;
-; Total fan-out                               ; 330        ;
-; Average fan-out                             ; 1.92       ;
+; Maximum fan-out                             ; 13         ;
+; Total fan-out                               ; 149        ;
+; Average fan-out                             ; 1.99       ;
 +---------------------------------------------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                             ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                   ; Entity Name         ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |Alu                                      ; 75 (0)              ; 0 (0)                     ; 0                 ; 1          ; 48   ; 0            ; |Alu                                                                                                                  ; Alu                 ; work         ;
-;    |and_op:_and|                          ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Alu|and_op:_and                                                                                                      ; and_op              ; work         ;
-;    |division:divisor|                     ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Alu|division:divisor                                                                                                 ; division            ; work         ;
-;       |lpm_divide:Div0|                   ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Alu|division:divisor|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_1am:auto_generated|  ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Alu|division:divisor|lpm_divide:Div0|lpm_divide_1am:auto_generated                                                   ; lpm_divide_1am      ; work         ;
-;             |sign_div_unsign_7kh:divider| ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Alu|division:divisor|lpm_divide:Div0|lpm_divide_1am:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh ; work         ;
-;                |alt_u_div_kse:divider|    ; 22 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Alu|division:divisor|lpm_divide:Div0|lpm_divide_1am:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider ; alt_u_div_kse       ; work         ;
-;    |modulo:modulus|                       ; 26 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Alu|modulo:modulus                                                                                                   ; modulo              ; work         ;
-;       |lpm_divide:Mod0|                   ; 26 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Alu|modulo:modulus|lpm_divide:Mod0                                                                                   ; lpm_divide          ; work         ;
-;          |lpm_divide_42m:auto_generated|  ; 26 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Alu|modulo:modulus|lpm_divide:Mod0|lpm_divide_42m:auto_generated                                                     ; lpm_divide_42m      ; work         ;
-;             |sign_div_unsign_7kh:divider| ; 26 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Alu|modulo:modulus|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider                         ; sign_div_unsign_7kh ; work         ;
-;                |alt_u_div_kse:divider|    ; 26 (26)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Alu|modulo:modulus|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider   ; alt_u_div_kse       ; work         ;
-;    |multiplicador:multiplier|             ; 0 (0)               ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |Alu|multiplicador:multiplier                                                                                         ; multiplicador       ; work         ;
-;    |or_op:_or|                            ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Alu|or_op:_or                                                                                                        ; or_op               ; work         ;
-;    |shiftL:_shiftL|                       ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Alu|shiftL:_shiftL                                                                                                   ; shiftL              ; work         ;
-;    |shiftR:_shiftR|                       ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Alu|shiftR:_shiftR                                                                                                   ; shiftR              ; work         ;
-;    |sumador:adder|                        ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Alu|sumador:adder                                                                                                    ; sumador             ; work         ;
-;    |xor_op:_xor|                          ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Alu|xor_op:_xor                                                                                                      ; xor_op              ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                      ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                         ; Entity Name         ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |calc                                        ; 32 (0)              ; 0 (0)                     ; 0                 ; 1          ; 21   ; 0            ; |calc                                                                                                                       ; calc                ; work         ;
+;    |Alu:alu|                                 ; 26 (0)              ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |calc|Alu:alu                                                                                                               ; Alu                 ; work         ;
+;       |division:_div|                        ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |calc|Alu:alu|division:_div                                                                                                 ; division            ; work         ;
+;          |lpm_divide:Div0|                   ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |calc|Alu:alu|division:_div|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_1am:auto_generated|  ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |calc|Alu:alu|division:_div|lpm_divide:Div0|lpm_divide_1am:auto_generated                                                   ; lpm_divide_1am      ; work         ;
+;                |sign_div_unsign_7kh:divider| ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |calc|Alu:alu|division:_div|lpm_divide:Div0|lpm_divide_1am:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh ; work         ;
+;                   |alt_u_div_kse:divider|    ; 22 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |calc|Alu:alu|division:_div|lpm_divide:Div0|lpm_divide_1am:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider ; alt_u_div_kse       ; work         ;
+;       |multiplicador:_mult|                  ; 0 (0)               ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |calc|Alu:alu|multiplicador:_mult                                                                                           ; multiplicador       ; work         ;
+;       |restador:_rest|                       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |calc|Alu:alu|restador:_rest                                                                                                ; restador            ; work         ;
+;    |multiplexor_result:mux_result|           ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |calc|multiplexor_result:mux_result                                                                                         ; multiplexor_result  ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -299,39 +289,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |Alu|shiftR:_shiftR|ShiftRight0 ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Alu|shiftR:_shiftR|ShiftRight0 ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Alu|shiftR:_shiftR|ShiftRight0 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; 32:1               ; 4 bits    ; 84 LEs        ; 20 LEs               ; 64 LEs                 ; No         ; |calc|multiplexor_result:mux_result|Selector3 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
 
 
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |Alu ;
-+----------------+-------+--------------------------------------------+
-; Parameter Name ; Value ; Type                                       ;
-+----------------+-------+--------------------------------------------+
-; N              ; 4     ; Signed Integer                             ;
-+----------------+-------+--------------------------------------------+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |calc ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; N              ; 4     ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: sumador:adder ;
-+----------------+-------+-----------------------------------+
-; Parameter Name ; Value ; Type                              ;
-+----------------+-------+-----------------------------------+
-; N              ; 4     ; Signed Integer                    ;
-+----------------+-------+-----------------------------------+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Alu:alu ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
+; N              ; 4     ; Signed Integer              ;
++----------------+-------+-----------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: restador:substractor ;
+; Parameter Settings for User Entity Instance: Alu:alu|sumador:_sum ;
 +----------------+-------+------------------------------------------+
 ; Parameter Name ; Value ; Type                                     ;
 +----------------+-------+------------------------------------------+
@@ -340,220 +328,182 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: multiplicador:multiplier ;
-+----------------+-------+----------------------------------------------+
-; Parameter Name ; Value ; Type                                         ;
-+----------------+-------+----------------------------------------------+
-; N              ; 4     ; Signed Integer                               ;
-+----------------+-------+----------------------------------------------+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Alu:alu|restador:_rest ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; N              ; 4     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: division:divisor ;
-+----------------+-------+--------------------------------------+
-; Parameter Name ; Value ; Type                                 ;
-+----------------+-------+--------------------------------------+
-; N              ; 4     ; Signed Integer                       ;
-+----------------+-------+--------------------------------------+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Alu:alu|multiplicador:_mult ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; N              ; 4     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: modulo:modulus ;
-+----------------+-------+------------------------------------+
-; Parameter Name ; Value ; Type                               ;
-+----------------+-------+------------------------------------+
-; N              ; 4     ; Signed Integer                     ;
-+----------------+-------+------------------------------------+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Alu:alu|division:_div ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; N              ; 4     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: and_op:_and ;
-+----------------+-------+---------------------------------+
-; Parameter Name ; Value ; Type                            ;
-+----------------+-------+---------------------------------+
-; N              ; 4     ; Signed Integer                  ;
-+----------------+-------+---------------------------------+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Alu:alu|modulo:_mod ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; N              ; 4     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------+
-; Parameter Settings for User Entity Instance: or_op:_or ;
-+----------------+-------+-------------------------------+
-; Parameter Name ; Value ; Type                          ;
-+----------------+-------+-------------------------------+
-; N              ; 4     ; Signed Integer                ;
-+----------------+-------+-------------------------------+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Alu:alu|and_op:_and ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; N              ; 4     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: xor_op:_xor ;
-+----------------+-------+---------------------------------+
-; Parameter Name ; Value ; Type                            ;
-+----------------+-------+---------------------------------+
-; N              ; 4     ; Signed Integer                  ;
-+----------------+-------+---------------------------------+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Alu:alu|or_op:_or ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; N              ; 4     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: shiftR:_shiftR ;
-+----------------+-------+------------------------------------+
-; Parameter Name ; Value ; Type                               ;
-+----------------+-------+------------------------------------+
-; N              ; 4     ; Signed Integer                     ;
-+----------------+-------+------------------------------------+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Alu:alu|xor_op:_xor ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; N              ; 4     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: shiftL:_shiftL ;
-+----------------+-------+------------------------------------+
-; Parameter Name ; Value ; Type                               ;
-+----------------+-------+------------------------------------+
-; N              ; 4     ; Signed Integer                     ;
-+----------------+-------+------------------------------------+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Alu:alu|shiftR:_shr ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; N              ; 4     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: division:divisor|lpm_divide:Div0 ;
-+------------------------+----------------+-----------------------------------------+
-; Parameter Name         ; Value          ; Type                                    ;
-+------------------------+----------------+-----------------------------------------+
-; LPM_WIDTHN             ; 4              ; Untyped                                 ;
-; LPM_WIDTHD             ; 4              ; Untyped                                 ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
-; LPM_PIPELINE           ; 0              ; Untyped                                 ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                 ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
-; CBXI_PARAMETER         ; lpm_divide_1am ; Untyped                                 ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
-+------------------------+----------------+-----------------------------------------+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Alu:alu|shiftL:_shl ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; N              ; 4     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: modulo:modulus|lpm_divide:Mod0 ;
-+------------------------+----------------+---------------------------------------+
-; Parameter Name         ; Value          ; Type                                  ;
-+------------------------+----------------+---------------------------------------+
-; LPM_WIDTHN             ; 4              ; Untyped                               ;
-; LPM_WIDTHD             ; 4              ; Untyped                               ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
-; LPM_PIPELINE           ; 0              ; Untyped                               ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                               ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                               ;
-; CBXI_PARAMETER         ; lpm_divide_42m ; Untyped                               ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                               ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                               ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                            ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                          ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                          ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                        ;
-+------------------------+----------------+---------------------------------------+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: multiplexor_result:mux_result ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; N              ; 4     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "shiftL:_shiftL"                                                                     ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; S[4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: multiplexor_flags:mux_flags ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; N              ; 4     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "shiftR:_shiftR"                                                                     ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; S[4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Alu:alu|division:_div|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                                      ;
+; LPM_WIDTHD             ; 4              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_1am ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "xor_op:_xor"                                                                        ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; S[4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplexor_flags:mux_flags"                                                                                                              ;
++------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                    ;
++------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
+; op   ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "op[4..4]" will be connected to GND. ;
++------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "or_op:_or"                                                                          ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; S[4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplexor_result:mux_result"                                                                                                                ;
++-------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                       ;
++-------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; _SUM  ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "_SUM[4..4]" will be connected to GND.  ;
+; _REST ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "_REST[4..4]" will be connected to GND. ;
+; _MULT ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "_MULT[4..4]" will be connected to GND. ;
+; _DIV  ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "_DIV[4..4]" will be connected to GND.  ;
+; _MOD  ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "_MOD[4..4]" will be connected to GND.  ;
+; _AND  ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "_AND[4..4]" will be connected to GND.  ;
+; _OR   ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "_OR[4..4]" will be connected to GND.   ;
+; _XOR  ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "_XOR[4..4]" will be connected to GND.  ;
+; _SHR  ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "_SHR[4..4]" will be connected to GND.  ;
+; _SHL  ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "_SHL[4..4]" will be connected to GND.  ;
++-------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "and_op:_and"                                                                        ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; S[4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "modulo:modulus"                                                                     ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; S[4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "division:divisor"                                                                   ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; S[4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "multiplicador:multiplier"                                                           ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; S[4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "restador:substractor"                                                               ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; S[4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sumador:adder"                                                                      ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; S[4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Alu:alu"                                                                                                                  ;
++-------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                                  ;
++-------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; _SUM  ; Output ; Warning  ; Output or bidir port (5 bits) is wider than the port expression (4 bits) it drives; bit(s) "_SUM[4..4]" have no fanouts  ;
+; _REST ; Output ; Warning  ; Output or bidir port (5 bits) is wider than the port expression (4 bits) it drives; bit(s) "_REST[4..4]" have no fanouts ;
+; _MULT ; Output ; Warning  ; Output or bidir port (5 bits) is wider than the port expression (4 bits) it drives; bit(s) "_MULT[4..4]" have no fanouts ;
+; _DIV  ; Output ; Warning  ; Output or bidir port (5 bits) is wider than the port expression (4 bits) it drives; bit(s) "_DIV[4..4]" have no fanouts  ;
+; _MOD  ; Output ; Warning  ; Output or bidir port (5 bits) is wider than the port expression (4 bits) it drives; bit(s) "_MOD[4..4]" have no fanouts  ;
+; _AND  ; Output ; Warning  ; Output or bidir port (5 bits) is wider than the port expression (4 bits) it drives; bit(s) "_AND[4..4]" have no fanouts  ;
+; _OR   ; Output ; Warning  ; Output or bidir port (5 bits) is wider than the port expression (4 bits) it drives; bit(s) "_OR[4..4]" have no fanouts   ;
+; _XOR  ; Output ; Warning  ; Output or bidir port (5 bits) is wider than the port expression (4 bits) it drives; bit(s) "_XOR[4..4]" have no fanouts  ;
+; _SHR  ; Output ; Warning  ; Output or bidir port (5 bits) is wider than the port expression (4 bits) it drives; bit(s) "_SHR[4..4]" have no fanouts  ;
+; _SHL  ; Output ; Warning  ; Output or bidir port (5 bits) is wider than the port expression (4 bits) it drives; bit(s) "_SHL[4..4]" have no fanouts  ;
++-------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -561,27 +511,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 79                          ;
-;     arith             ; 16                          ;
-;         0 data inputs ; 4                           ;
-;         2 data inputs ; 6                           ;
+; arriav_lcell_comb     ; 33                          ;
+;     arith             ; 10                          ;
+;         0 data inputs ; 2                           ;
+;         2 data inputs ; 5                           ;
+;         5 data inputs ; 3                           ;
+;     normal            ; 14                          ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 3                           ;
 ;         5 data inputs ; 6                           ;
-;     normal            ; 45                          ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 17                          ;
-;         3 data inputs ; 10                          ;
-;         4 data inputs ; 6                           ;
-;         5 data inputs ; 5                           ;
-;         6 data inputs ; 3                           ;
-;     shared            ; 18                          ;
-;         0 data inputs ; 6                           ;
-;         2 data inputs ; 6                           ;
-;         4 data inputs ; 6                           ;
+;         6 data inputs ; 2                           ;
+;     shared            ; 9                           ;
+;         0 data inputs ; 3                           ;
+;         2 data inputs ; 3                           ;
+;         4 data inputs ; 3                           ;
 ; arriav_mac            ; 1                           ;
-; boundary_port         ; 48                          ;
+; boundary_port         ; 21                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 8.50                        ;
-; Average LUT depth     ; 5.52                        ;
+; Average LUT depth     ; 5.38                        ;
 +-----------------------+-----------------------------+
 
 
@@ -600,78 +550,113 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Thu Mar 17 10:54:50 2022
+    Info: Processing started: Thu Mar 17 16:00:55 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Experimento_1 -c Experimento_1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file multiplicador.sv
-    Info (12023): Found entity 1: multiplicador File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/multiplicador.sv Line: 1
+    Info (12023): Found entity 1: multiplicador File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplicador.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file division.sv
-    Info (12023): Found entity 1: division File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/division.sv Line: 1
+    Info (12023): Found entity 1: division File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/division.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file modulo.sv
-    Info (12023): Found entity 1: modulo File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/modulo.sv Line: 1
+    Info (12023): Found entity 1: modulo File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/modulo.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file restador.sv
-    Info (12023): Found entity 1: restador File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/restador.sv Line: 1
+    Info (12023): Found entity 1: restador File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/restador.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file sumador.sv
-    Info (12023): Found entity 1: sumador File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/sumador.sv Line: 1
+    Info (12023): Found entity 1: sumador File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/sumador.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file and_op.sv
-    Info (12023): Found entity 1: and_op File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/and_op.sv Line: 1
+    Info (12023): Found entity 1: and_op File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/and_op.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file or_op.sv
-    Info (12023): Found entity 1: or_op File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/or_op.sv Line: 1
+    Info (12023): Found entity 1: or_op File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/or_op.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file xor_op.sv
-    Info (12023): Found entity 1: xor_op File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/xor_op.sv Line: 1
+    Info (12023): Found entity 1: xor_op File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/xor_op.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file shiftr.sv
-    Info (12023): Found entity 1: shiftR File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/shiftR.sv Line: 1
+    Info (12023): Found entity 1: shiftR File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/shiftR.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file shiftl.sv
-    Info (12023): Found entity 1: shiftL File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/shiftL.sv Line: 1
+    Info (12023): Found entity 1: shiftL File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/shiftL.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
-    Info (12023): Found entity 1: Alu File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/Alu.sv Line: 1
-Info (12127): Elaborating entity "Alu" for the top level hierarchy
-Info (12128): Elaborating entity "sumador" for hierarchy "sumador:adder" File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/Alu.sv Line: 6
-Info (12128): Elaborating entity "restador" for hierarchy "restador:substractor" File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/Alu.sv Line: 7
-Info (12128): Elaborating entity "multiplicador" for hierarchy "multiplicador:multiplier" File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/Alu.sv Line: 8
-Info (12128): Elaborating entity "division" for hierarchy "division:divisor" File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/Alu.sv Line: 9
-Info (12128): Elaborating entity "modulo" for hierarchy "modulo:modulus" File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/Alu.sv Line: 10
-Info (12128): Elaborating entity "and_op" for hierarchy "and_op:_and" File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/Alu.sv Line: 11
-Info (12128): Elaborating entity "or_op" for hierarchy "or_op:_or" File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/Alu.sv Line: 12
-Info (12128): Elaborating entity "xor_op" for hierarchy "xor_op:_xor" File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/Alu.sv Line: 13
-Info (12128): Elaborating entity "shiftR" for hierarchy "shiftR:_shiftR" File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/Alu.sv Line: 14
-Info (12128): Elaborating entity "shiftL" for hierarchy "shiftL:_shiftL" File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/Alu.sv Line: 15
-Info (278001): Inferred 2 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "division:divisor|Div0" File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/division.sv Line: 7
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "modulo:modulus|Mod0" File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/modulo.sv Line: 7
-Info (12130): Elaborated megafunction instantiation "division:divisor|lpm_divide:Div0" File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/division.sv Line: 7
-Info (12133): Instantiated megafunction "division:divisor|lpm_divide:Div0" with the following parameter: File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/division.sv Line: 7
+    Info (12023): Found entity 1: Alu File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/Alu.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file multiplexor_flags.sv
+    Info (12023): Found entity 1: multiplexor_flags File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_flags.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file calc.sv
+    Info (12023): Found entity 1: calc File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/calc.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file multiplexor_result.sv
+    Info (12023): Found entity 1: multiplexor_result File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_result.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file testcalc.sv
+    Info (12023): Found entity 1: testCalc File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/testCalc.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at multiplexor_flags.sv(52): created implicit net for "flag" File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_flags.sv Line: 52
+Info (12127): Elaborating entity "calc" for the top level hierarchy
+Info (12128): Elaborating entity "Alu" for hierarchy "Alu:alu" File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/calc.sv Line: 12
+Info (12128): Elaborating entity "sumador" for hierarchy "Alu:alu|sumador:_sum" File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/Alu.sv Line: 6
+Info (12128): Elaborating entity "restador" for hierarchy "Alu:alu|restador:_rest" File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/Alu.sv Line: 8
+Info (12128): Elaborating entity "multiplicador" for hierarchy "Alu:alu|multiplicador:_mult" File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/Alu.sv Line: 10
+Info (12128): Elaborating entity "division" for hierarchy "Alu:alu|division:_div" File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/Alu.sv Line: 12
+Info (12128): Elaborating entity "modulo" for hierarchy "Alu:alu|modulo:_mod" File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/Alu.sv Line: 14
+Info (12128): Elaborating entity "and_op" for hierarchy "Alu:alu|and_op:_and" File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/Alu.sv Line: 16
+Info (12128): Elaborating entity "or_op" for hierarchy "Alu:alu|or_op:_or" File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/Alu.sv Line: 18
+Info (12128): Elaborating entity "xor_op" for hierarchy "Alu:alu|xor_op:_xor" File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/Alu.sv Line: 20
+Info (12128): Elaborating entity "shiftR" for hierarchy "Alu:alu|shiftR:_shr" File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/Alu.sv Line: 22
+Info (12128): Elaborating entity "shiftL" for hierarchy "Alu:alu|shiftL:_shl" File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/Alu.sv Line: 24
+Info (12128): Elaborating entity "multiplexor_result" for hierarchy "multiplexor_result:mux_result" File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/calc.sv Line: 13
+Warning (10235): Verilog HDL Always Construct warning at multiplexor_result.sv(10): variable "_SUM" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_result.sv Line: 10
+Warning (10235): Verilog HDL Always Construct warning at multiplexor_result.sv(11): variable "_REST" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_result.sv Line: 11
+Warning (10235): Verilog HDL Always Construct warning at multiplexor_result.sv(12): variable "_MULT" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_result.sv Line: 12
+Warning (10235): Verilog HDL Always Construct warning at multiplexor_result.sv(13): variable "_DIV" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_result.sv Line: 13
+Warning (10235): Verilog HDL Always Construct warning at multiplexor_result.sv(14): variable "_MULT" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_result.sv Line: 14
+Warning (10235): Verilog HDL Always Construct warning at multiplexor_result.sv(15): variable "_DIV" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_result.sv Line: 15
+Warning (10235): Verilog HDL Always Construct warning at multiplexor_result.sv(16): variable "_MULT" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_result.sv Line: 16
+Warning (10235): Verilog HDL Always Construct warning at multiplexor_result.sv(17): variable "_DIV" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_result.sv Line: 17
+Warning (10235): Verilog HDL Always Construct warning at multiplexor_result.sv(18): variable "_MULT" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_result.sv Line: 18
+Warning (10235): Verilog HDL Always Construct warning at multiplexor_result.sv(19): variable "_DIV" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_result.sv Line: 19
+Warning (10230): Verilog HDL assignment warning at multiplexor_result.sv(26): truncated value with size 5 to match size of target (4) File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_result.sv Line: 26
+Info (12128): Elaborating entity "multiplexor_flags" for hierarchy "multiplexor_flags:mux_flags" File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/calc.sv Line: 14
+Warning (10036): Verilog HDL or VHDL warning at multiplexor_flags.sv(52): object "flag" assigned a value but never read File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_flags.sv Line: 52
+Warning (10235): Verilog HDL Always Construct warning at multiplexor_flags.sv(11): variable "op" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_flags.sv Line: 11
+Warning (10235): Verilog HDL Always Construct warning at multiplexor_flags.sv(12): variable "op" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_flags.sv Line: 12
+Warning (10235): Verilog HDL Always Construct warning at multiplexor_flags.sv(44): variable "op" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_flags.sv Line: 44
+Warning (10230): Verilog HDL assignment warning at multiplexor_flags.sv(44): truncated value with size 5 to match size of target (4) File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_flags.sv Line: 44
+Warning (10272): Verilog HDL Case Statement warning at multiplexor_flags.sv(44): case item expression covers a value already covered by a previous case item File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_flags.sv Line: 44
+Warning (10230): Verilog HDL assignment warning at multiplexor_flags.sv(52): truncated value with size 4 to match size of target (1) File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_flags.sv Line: 52
+Warning (10034): Output port "flags" at multiplexor_flags.sv(1) has no driver File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/multiplexor_flags.sv Line: 1
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Alu:alu|division:_div|Div0" File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/division.sv Line: 7
+Info (12130): Elaborated megafunction instantiation "Alu:alu|division:_div|lpm_divide:Div0" File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/division.sv Line: 7
+Info (12133): Instantiated megafunction "Alu:alu|division:_div|lpm_divide:Div0" with the following parameter: File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/division.sv Line: 7
     Info (12134): Parameter "LPM_WIDTHN" = "4"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_1am.tdf
-    Info (12023): Found entity 1: lpm_divide_1am File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/db/lpm_divide_1am.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_1am File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/db/lpm_divide_1am.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_7kh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_7kh File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/db/sign_div_unsign_7kh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_7kh File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/db/sign_div_unsign_7kh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_kse.tdf
-    Info (12023): Found entity 1: alt_u_div_kse File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/db/alt_u_div_kse.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "modulo:modulus|lpm_divide:Mod0" File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/modulo.sv Line: 7
-Info (12133): Instantiated megafunction "modulo:modulus|lpm_divide:Mod0" with the following parameter: File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/modulo.sv Line: 7
-    Info (12134): Parameter "LPM_WIDTHN" = "4"
-    Info (12134): Parameter "LPM_WIDTHD" = "4"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_42m.tdf
-    Info (12023): Found entity 1: lpm_divide_42m File: C:/Users/carlo/OneDrive/Escritorio/Quartus_projects/Lab3_exp_1/db/lpm_divide_42m.tdf Line: 25
+    Info (12023): Found entity 1: alt_u_div_kse File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/db/alt_u_div_kse.tdf Line: 23
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "flags[0]" is stuck at GND File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/calc.sv Line: 5
+    Warning (13410): Pin "flags[1]" is stuck at GND File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/calc.sv Line: 5
+    Warning (13410): Pin "flags[2]" is stuck at GND File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/calc.sv Line: 5
+    Warning (13410): Pin "flags[3]" is stuck at GND File: C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/calc.sv Line: 5
 Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/output_files/Experimento_1.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 124 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 40 output pins
-    Info (21061): Implemented 75 logic cells
+Info (21057): Implemented 54 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 13 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 32 logic cells
     Info (21062): Implemented 1 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4828 megabytes
-    Info: Processing ended: Thu Mar 17 10:55:02 2022
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:27
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 27 warnings
+    Info: Peak virtual memory: 4825 megabytes
+    Info: Processing ended: Thu Mar 17 16:01:13 2022
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:44
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/jeyki/OneDrive/01. SEMESTERS/2022 - Semestre I/Taller de Diseno Digital/Laboratorio 3/lab3/Lab3_exp_1/output_files/Experimento_1.map.smsg.
 
 
