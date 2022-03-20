@@ -1,6 +1,6 @@
 module test_alu;
 	
-	localparam N = 2;
+	localparam N = 4;
 	logic [N-1:0] result;
 	logic [3:0] opcode;
 	logic [N-1:0] a;
@@ -20,21 +20,12 @@ module test_alu;
 	
 	initial begin
 		opcode = 4'b0;
-		a = 2'b0;
-		b = 2'b0;
+		a = 4'b0;
+		b = 4'b0;
 		#10;
-		a = 2'b01;
-		b = 2'b01;
-		opcode = 4'b0100;
-		#10;
-		a = 2'b10;
-		b = 2'b01;
-		#10;
-		a = 2'b10;
-		b = 2'b10;
-		#10;
-		a = 2'b11;
-		b = 2'b10;
+		a = 4'b0001;
+		b = 4'b0011;
+		opcode = 4'b0011;
 		#10;
 	end
 	
