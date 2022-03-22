@@ -429,6 +429,7 @@
     </comp>
     <comp lib="2" loc="(810,280)" name="Multiplexer"/>
     <comp lib="3" loc="(340,150)" name="Multiplier">
+      <a name="mode" val="twosComplement"/>
       <a name="width" val="2"/>
     </comp>
     <comp lib="3" loc="(340,270)" name="Divider">
