@@ -45,7 +45,7 @@ module alu
 			end
 			default:
 			begin
-				result_r = '0;
+				result_r = 0;
 			end
 		endcase
 	end
