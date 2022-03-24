@@ -1,9 +1,9 @@
 module seven_seg_decoder
 (
-	input [4:0] value_i,
+	input int value_i,
 	output [6:0] output_o
 );
-	always @ (value_i)
+	always_comb
 	begin
 		case (value_i)
 			0 : output_o = 7'b1000000;//0
