@@ -88,7 +88,7 @@ module calc
 		.z_display_o(z_display_r),
 		.n_display_o(n_display_r),
 		.v_display_o(v_display_r),
-		.c_display_o(c_display_r),
+		.c_display_o(c_display_r)
 	);
 	
 	alu #(.N(4)) alu_mod (
@@ -102,7 +102,7 @@ module calc
 		.v_o(v_flag_r)
 	);
 	
-	always @ (posedge opcode_i)
+	always_ff @ (posedge opcode_i)
 	begin
 		case (opcode_r)
 				0: opcode_r = 1;
