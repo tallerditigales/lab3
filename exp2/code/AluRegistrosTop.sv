@@ -12,7 +12,10 @@ module AluRegistrosTop
 	logic [N-1:0] x,y,raux;
 	
 	RegistroCargaInput #(N) registro_input (a,b,clk,rst,{x,y});
+	
 	alu #(N) alu_instance (opcode,x,y,raux);
+	
+	
 	RegistroCargaOutput #(N) registro_output (raux,clk,rst,salida);
 	
 endmodule
