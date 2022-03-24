@@ -1,5 +1,5 @@
 module RegistroCargaInput
-#(parameter N = 2)
+#(parameter N = 4)
 (
 	input [N-1:0] a,
 	input [N-1:0] b,
