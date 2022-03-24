@@ -7,29 +7,34 @@ module logic_unit
 	output [N-1:0] result_o
 );
 	
-	`include "alu_defs.sv"
+	import alu_defs::LOGIC_SHIFTR;
+	import alu_defs::LOGIC_SHIFTL;
+	import alu_defs::LOGIC_AND;
+	import alu_defs::LOGIC_XOR;
+	import alu_defs::LOGIC_OR;
+	
 	logic [N-1:0] result_r;
 	
-	always @ (a_i or b_i or opcode_i)
+	always_comb
 	begin
 		case (opcode_i)
-			`LOGIC_SHIFTR:
+			LOGIC_SHIFTR:
 			begin
 				result_r = (a_i >> b_i);
 			end
-			`LOGIC_SHIFTL:
+			LOGIC_SHIFTL:
 			begin
 				result_r = (a_i << b_i);
 			end
-			`LOGIC_AND:
+			LOGIC_AND:
 			begin
 				result_r = (a_i & b_i);
 			end
-			`LOGIC_XOR:
+			LOGIC_XOR:
 			begin
 				result_r = (a_i ^ b_i);
 			end
-			`LOGIC_OR:
+			LOGIC_OR:
 			begin
 				result_r = (a_i | b_i);
 			end
