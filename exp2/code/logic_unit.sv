@@ -1,5 +1,5 @@
 module logic_unit
-#(parameter N = 16)
+#(parameter N = 4)
 (
 	input [N-1:0] a_i,
 	input [N-1:0] b_i,

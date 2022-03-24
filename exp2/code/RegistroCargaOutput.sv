@@ -1,5 +1,5 @@
 module RegistroCargaOutput
-#(parameter N = 16)
+#(parameter N = 4)
 (
 	input [N-1:0] s,
 	input clk,

@@ -1,5 +1,5 @@
 module alu
-#(parameter N = 16)
+#(parameter N = 4)
 (
 	input [3:0] opcode_i,
 	input [N-1:0] a_i,
