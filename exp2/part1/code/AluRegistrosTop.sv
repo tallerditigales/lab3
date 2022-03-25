@@ -1,5 +1,5 @@
 module AluRegistrosTop
-#(parameter N = 2)
+#(parameter N = 4)
 (
 	clk, rst, 
 	a_in_in, b_in_in, opcode_in_in,
