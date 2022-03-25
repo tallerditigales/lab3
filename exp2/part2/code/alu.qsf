@@ -133,9 +133,9 @@ set_location_assignment PIN_AH28 -to display_f[6]
 set_location_assignment PIN_AD11 -to mode_flag
 set_location_assignment PIN_AD12 -to sig_flag
 set_location_assignment PIN_AA15 -to opcode
-set_location_assignment PIN_V16 -to salida[0]
-set_location_assignment PIN_W16 -to salida[1]
-set_location_assignment PIN_V17 -to salida[2]
-set_location_assignment PIN_V18 -to salida[3]
 set_location_assignment PIN_Y16 -to rst
+set_location_assignment PIN_V16 -to reg_saved[0]
+set_location_assignment PIN_W16 -to reg_saved[1]
+set_location_assignment PIN_V17 -to reg_saved[2]
+set_location_assignment PIN_V18 -to reg_saved[3]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
