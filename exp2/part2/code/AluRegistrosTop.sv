@@ -23,7 +23,20 @@ module AluRegistrosTop
 	logic [N-1:0] x,y,raux;
 	
 	RegistroCargaInput #(N) registro_input (a,b,clk,rst,{x,y});
-	calc #(N) alu_instance (x,y,opcode,sig_flag,mode_flag,raux,display_a,display_b,display_c,display_d,display_e,display_f);
+	calc #(N) alu_instance (
+		x,
+		y,
+		opcode,
+		sig_flag,
+		mode_flag,
+		raux,
+		display_a,
+		display_b,
+		display_c,
+		display_d,
+		display_e,
+		display_f
+	);
 	//RegistroCargaOutput #(N) registro_output (raux,clk,rst,salida);
 	
 endmodule
