@@ -1,21 +1,23 @@
+package alu_defs;
 //--------------------------------------------------------------------
 // ALU RESULT TYPES
 //--------------------------------------------------------------------
-`define ARITH_RESULT 1'b0
-`define LOGIC_RESULT 1'b1
+	parameter ARITH_RESULT = 1'b0;
+	parameter LOGIC_RESULT = 1'b1;
 //--------------------------------------------------------------------
 // ARITH_UNIT Operations
 //--------------------------------------------------------------------
-`define ARITH_ADD    3'b011
-`define ARITH_SUB    3'b111
-`define ARITH_DIV    3'b001
-`define ARITH_MUL    3'b000
-`define ARITH_MOD    3'b010
+	parameter ARITH_ADD =    3'b011;
+	parameter ARITH_SUB =    3'b111;
+	parameter ARITH_DIV =    3'b001;
+	parameter ARITH_MUL =    3'b000;
+	parameter ARITH_MOD =    3'b010;
 //--------------------------------------------------------------------
 // LOGIC_UNIT Operations
 //--------------------------------------------------------------------
-`define LOGIC_SHIFTR    3'b000
-`define LOGIC_SHIFTL    3'b001
-`define LOGIC_AND       3'b010
-`define LOGIC_XOR       3'b011
-`define LOGIC_OR        3'b100
+	parameter LOGIC_SHIFTR = 3'b000;
+	parameter LOGIC_SHIFTL = 3'b001;
+	parameter LOGIC_AND =    3'b010;
+	parameter LOGIC_XOR =    3'b011;
+	parameter LOGIC_OR =     3'b100;
+endpackage

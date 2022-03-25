@@ -10,11 +10,12 @@ module alu
 	output n_o,
 	output v_o
 );
-	`include "alu_defs.sv"
+	import alu_defs::ARITH_RESULT;
+	import alu_defs::LOGIC_RESULT;
 	
-	reg [N-1:0] result_r;
-	wire [N-1:0] arith_result_w;
-	wire [N-1:0] logic_result_w;
+	logic [N-1:0] result_r;
+	logic [N-1:0] arith_result_w;
+	logic [N-1:0] logic_result_w;
 	
 	arith_unit #(.N(N)) arithmetics (
 		.a_i(a_i),
@@ -32,20 +33,23 @@ module alu
 		.result_o(logic_result_w)
 	);
 	
-	always @ (opcode_i or arith_result_w or logic_result_w)
+//	always_ff @ (opcode_i or arith_result_w or logic_result_w)
+	always_comb
 	begin
 		case (opcode_i[0])
-			`ARITH_RESULT:
+			ARITH_RESULT:
 			begin
 				result_r = arith_result_w;
 			end
-			`LOGIC_RESULT:
+			
+			LOGIC_RESULT:
 			begin
 				result_r = logic_result_w;
 			end
+			
 			default:
 			begin
-				result_r = 0;
+				result_r = '0;
 			end
 		endcase
 	end

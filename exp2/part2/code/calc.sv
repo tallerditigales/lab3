@@ -1,15 +1,18 @@
 module calc
+#(parameter N = 2)
 (
 	// Valor del operando A
-	input [3:0] a_operand_i,
+	input [N-1:0] a_operand_i,
 	// Valor del operando B
-	input [3:0] b_operand_i,
+	input [N-1:0] b_operand_i,
 	// Código de operación a realizar
 	input opcode_i,
 	// Selector de modo entre signed y unsigned
 	input sig_flag_i,
 	// Selector de modo entre modo configuración y modo resultado.
 	input mode_flag_i,
+	// Salida binaria
+	output [N-1:0] salida,
 	// Salida para 7 segmentos de decenas de valor a y bandera z
 	output [6:0] display_a_o,
 	// Salida para 7 segmentos de unidades de valor a y bandera n
@@ -31,7 +34,6 @@ module calc
 	
 	
 	logic [3:0] opcode_r = 6;
-	logic [3:0] result_r;
 	
 	
 	logic [6:0] result_tens_r;
@@ -74,7 +76,7 @@ module calc
 	);
 	
 	operand_decoder result_mod (
-		.value_i(result_r),
+		.value_i(salida),
 		.tens_o(result_tens_r),
 		.units_o(result_units_r),
 		.sig(sig_flag_i)
@@ -88,21 +90,21 @@ module calc
 		.z_display_o(z_display_r),
 		.n_display_o(n_display_r),
 		.v_display_o(v_display_r),
-		.c_display_o(c_display_r),
+		.c_display_o(c_display_r)
 	);
 	
 	alu #(.N(4)) alu_mod (
 		.opcode_i(opcode_r),
 		.a_i(a_operand_i),
 		.b_i(b_operand_i),
-		.result_o(result_r),
+		.result_o(salida),
 		.c_o(c_flag_r),
 		.z_o(z_flag_r),
 		.n_o(n_flag_r),
 		.v_o(v_flag_r)
 	);
 	
-	always @ (posedge opcode_i)
+	always_ff @ (posedge opcode_i)
 	begin
 		case (opcode_r)
 				0: opcode_r = 1;

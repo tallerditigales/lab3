@@ -1,11 +1,11 @@
 module opcode_decoder
 (
-	input [3:0] value_i,
+	input int value_i,
 	output [6:0] tens_o,
 	output [6:0] units_o
 );
-	logic [4:0] tens_r;
-	logic [4:0] units_r;
+	int tens_r;
+	int units_r;
 	
 	seven_seg_decoder tens (
 		.value_i(tens_r),
@@ -17,7 +17,7 @@ module opcode_decoder
 		.output_o(units_o)
 	);
 	
-	always @ (value_i)
+	always_comb
 	begin
 		case (value_i)
 			0:
