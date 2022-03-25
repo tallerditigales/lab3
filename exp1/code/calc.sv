@@ -30,7 +30,7 @@ module calc
 	logic [6:0] b_operand_units_r;
 	
 	
-	logic [3:0] opcode_r = 6;
+	int opcode_r = 6;
 	logic [3:0] result_r;
 	
 	
