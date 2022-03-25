@@ -16,11 +16,12 @@ module AluRegistrosTop
 	output [6:0] display_c,
 	output [6:0] display_d,
 	output [6:0] display_e,
-	output [6:0] display_f
+	output [6:0] display_f,
 	
+	output [N-1:0] reg_saved
 );
 
-	logic [N-1:0] x,y,raux;
+	logic [N-1:0] x,y;
 	
 	RegistroCargaInput #(N) registro_input (a,b,clk,rst,{x,y});
 	calc #(N) alu_instance (
@@ -29,7 +30,7 @@ module AluRegistrosTop
 		opcode,
 		sig_flag,
 		mode_flag,
-		raux,
+		reg_saved,
 		display_a,
 		display_b,
 		display_c,
@@ -37,6 +38,6 @@ module AluRegistrosTop
 		display_e,
 		display_f
 	);
-	//RegistroCargaOutput #(N) registro_output (raux,clk,rst,salida);
+	RegistroCargaOutput #(N) registro_output (reg_saved,clk,rst,salida);
 	
 endmodule

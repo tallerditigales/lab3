@@ -10,7 +10,7 @@ module RegistroCargaOutput
 
 	logic raux=0;
 	
-	always @ (negedge clk or posedge rst)
+	always_ff @ (posedge clk or posedge rst)
 		if (rst) 
 			raux=0;
 		else 
