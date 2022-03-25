@@ -1,5 +1,5 @@
 module AluRegistrosTop
-#(parameter N = 2)
+#(parameter N = 64)
 (
 
 	input sig_flag,
