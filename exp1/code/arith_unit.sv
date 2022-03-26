@@ -15,8 +15,8 @@ module arith_unit
 	import alu_defs::ARITH_MOD;
 	
 	logic [2*N-1:0] result_r;
-	logic overflow_r = 0;
-	logic cout_r = 0;
+	logic overflow_r = 1'b0;
+	logic cout_r = 1'b0;
 	
 	
 	always_comb
