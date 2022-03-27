@@ -33,7 +33,6 @@ module alu
 		.result_o(logic_result_w)
 	);
 	
-//	always_ff @ (opcode_i or arith_result_w or logic_result_w)
 	always_comb
 	begin
 		case (opcode_i[0])

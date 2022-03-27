@@ -118,11 +118,11 @@ module calc
 		endcase
 	end
 	
-	assign display_a_o = (mode_flag_i) ? a_operand_tens_r : z_display_r;
-	assign display_b_o = (mode_flag_i) ? a_operand_units_r : n_display_r;
-	assign display_c_o = (mode_flag_i) ? opcode_tens_r : result_tens_r;
-	assign display_d_o = (mode_flag_i) ? opcode_units_r : result_units_r;
-	assign display_e_o = (mode_flag_i) ? b_operand_tens_r : c_display_r;
-	assign display_f_o = (mode_flag_i) ? b_operand_units_r : v_display_r;
+	assign display_a_o = (mode_flag_i) ? z_display_r : a_operand_tens_r;
+	assign display_b_o = (mode_flag_i) ? n_display_r : a_operand_units_r;
+	assign display_c_o = (mode_flag_i) ? result_tens_r : opcode_tens_r;
+	assign display_d_o = (mode_flag_i) ? result_units_r : opcode_units_r;
+	assign display_e_o = (mode_flag_i) ? c_display_r : b_operand_tens_r;
+	assign display_f_o = (mode_flag_i) ? v_display_r : b_operand_units_r;
 	
 endmodule
