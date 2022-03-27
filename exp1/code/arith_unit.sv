@@ -5,8 +5,8 @@ module arith_unit
 	input [N-1:0] b_i,
 	input [2:0] opcode_i,
 	output [N-1:0] result_o,
-	output overflow_o,
-	output cout_o
+	output logic overflow_o,
+	output logic cout_o
 );
 	import alu_defs::ARITH_ADD;
 	import alu_defs::ARITH_SUB;
@@ -15,9 +15,6 @@ module arith_unit
 	import alu_defs::ARITH_MOD;
 	
 	logic [2*N-1:0] result_r;
-	logic overflow_r = 1'b0;
-	logic cout_r = 1'b0;
-	
 	
 	always_comb
 	begin
@@ -25,43 +22,41 @@ module arith_unit
 			ARITH_ADD:
 			begin
 				result_r = (a_i + b_i);
-				overflow_r = ~(a_i[N-1] ^ b_i[N-1]) & (result_r[N-1] ^ b_i[N-1]);
-				cout_r = result_r[N];
+				overflow_o = ~(a_i[N-1] ^ b_i[N-1]) & (result_r[N-1] ^ b_i[N-1]);
+				cout_o = result_r[N];
 			end
 			ARITH_SUB:
 			begin
 				result_r = (a_i - b_i);
-				overflow_r = (a_i[N-1] ^ b_i[N-1]) & (result_r[N-1] == b_i[N-1]);
-				cout_r = result_r[N];
+				overflow_o = (a_i[N-1] ^ b_i[N-1]) & (result_r[N-1] == b_i[N-1]);
+				cout_o = result_r[N];
 			end
 			ARITH_DIV:
 			begin
 				result_r = (a_i / b_i);
-				overflow_r = 1'b0;
-				cout_r = 1'b0;
+				overflow_o = 1'b0;
+				cout_o = 1'b0;
 			end
 			ARITH_MUL:
 			begin
 				result_r = (a_i * b_i);
-				overflow_r = 1'b0;
-				cout_r = 1'b0;
+				overflow_o = 1'b0;
+				cout_o = 1'b0;
 			end
 			ARITH_MOD:
 			begin
 				result_r = (a_i % b_i);
-				overflow_r = 1'b0;
-				cout_r = 1'b0;
+				overflow_o = 1'b0;
+				cout_o = 1'b0;
 			end
 			default:
 			begin
 				result_r = '0;
-				overflow_r = 1'b0;
-				cout_r = 1'b0;
+				overflow_o = 1'b0;
+				cout_o = 1'b0;
 			end
 		endcase
 	end
 	
 	assign result_o = result_r[N-1:0];
-	assign overflow_o = overflow_r;
-	assign cout_o = cout_r;
 endmodule

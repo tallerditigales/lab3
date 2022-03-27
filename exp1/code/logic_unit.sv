@@ -4,7 +4,7 @@ module logic_unit
 	input [N-1:0] a_i,
 	input [N-1:0] b_i,
 	input [2:0] opcode_i,
-	output [N-1:0] result_o
+	output logic [N-1:0] result_o
 );
 	
 	import alu_defs::LOGIC_SHIFTR;
@@ -13,38 +13,16 @@ module logic_unit
 	import alu_defs::LOGIC_XOR;
 	import alu_defs::LOGIC_OR;
 	
-	logic [N-1:0] result_r;
-	
 	always_comb
 	begin
 		case (opcode_i)
-			LOGIC_SHIFTR:
-			begin
-				result_r = (a_i >> b_i);
-			end
-			LOGIC_SHIFTL:
-			begin
-				result_r = (a_i << b_i);
-			end
-			LOGIC_AND:
-			begin
-				result_r = (a_i & b_i);
-			end
-			LOGIC_XOR:
-			begin
-				result_r = (a_i ^ b_i);
-			end
-			LOGIC_OR:
-			begin
-				result_r = (a_i | b_i);
-			end
-			default:
-			begin
-				result_r = '0;
-			end
+			LOGIC_SHIFTR: result_o = (a_i >> b_i);
+			LOGIC_SHIFTL: result_o = (a_i << b_i);
+			LOGIC_AND: result_o = (a_i & b_i);
+			LOGIC_XOR: result_o = (a_i ^ b_i);
+			LOGIC_OR: result_o = (a_i | b_i);
+			default: result_o = '0;
 		endcase
 	end
-	
-	assign result_o = result_r;
 	
 endmodule

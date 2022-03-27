@@ -4,7 +4,7 @@ module alu
 	input [3:0] opcode_i,
 	input [N-1:0] a_i,
 	input [N-1:0] b_i,
-	output [N-1:0] result_o,
+	output logic [N-1:0] result_o,
 	output c_o,
 	output z_o,
 	output n_o,
@@ -13,7 +13,6 @@ module alu
 	import alu_defs::ARITH_RESULT;
 	import alu_defs::LOGIC_RESULT;
 	
-	logic [N-1:0] result_r;
 	logic [N-1:0] arith_result_w;
 	logic [N-1:0] logic_result_w;
 	
@@ -36,24 +35,11 @@ module alu
 	always_comb
 	begin
 		case (opcode_i[0])
-			ARITH_RESULT:
-			begin
-				result_r = arith_result_w;
-			end
-			
-			LOGIC_RESULT:
-			begin
-				result_r = logic_result_w;
-			end
-			
-			default:
-			begin
-				result_r = '0;
-			end
+			ARITH_RESULT: result_o = arith_result_w;
+			LOGIC_RESULT: result_o = logic_result_w;
 		endcase
 	end
 	
-	assign n_o = result_r[N-1];
-	assign z_o = (result_r == '0);
-	assign result_o = result_r;
+	assign n_o = result_o[N-1];
+	assign z_o = (result_o == '0);
 endmodule
